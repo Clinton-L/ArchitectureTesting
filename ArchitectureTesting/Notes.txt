@@ -1,0 +1,16 @@
+﻿MEDIATOR PATTERN
+// Improve from 1-1 to many-many-ish--DONE
+// Add a relationship datasctructure (to help with above)--DONE
+// -> This datastructure could also have a func built into it e.g. moisture sensor => Send to wiper mech--DONE
+// tuple switch C#8--NOT NEEDED
+// Multiple mediators?--EASILY IMPLEMENTED
+
+BUILDER PATTERN
+/*
+* Notes:
+* Add another builder (Slab builder and House builder)
+* Add director (Site manager controlling order of build)
+* Add Multiple houses being built (with dependancy)
+*/
+
+ABSTRACT FACTORY --NEXT
