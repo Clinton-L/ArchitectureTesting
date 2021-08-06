@@ -43,6 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Patterns\Abstract Factory\Abstract\AbstractLaces.cs" />
+    <Compile Include="Patterns\Abstract Factory\Abstract\AbstractShoe.cs" />
+    <Compile Include="Patterns\Abstract Factory\Abstract\AbstractShoeFactory.cs" />
+    <Compile Include="Patterns\Abstract Factory\Concrete\CasualShoeProduct.cs" />
+    <Compile Include="Patterns\Abstract Factory\Concrete\ShoeShop.cs" />
+    <Compile Include="Patterns\Abstract Factory\Concrete\ConverseFactory.cs" />
+    <Compile Include="Patterns\Abstract Factory\Concrete\LaceProduct.cs" />
+    <Compile Include="Patterns\Abstract Factory\Concrete\NikeFactory.cs" />
+    <Compile Include="Patterns\Abstract Factory\Concrete\SportShoeProduct.cs" />
+    <Compile Include="Patterns\Abstract Factory\Concrete\VelcroLaceProduct.cs" />
     <Compile Include="Patterns\Mediator\BaseComponent.cs" />
     <Compile Include="Patterns\Mediator\BaseMediator.cs" />
     <Compile Include="Patterns\Builder\Builder.cs" />

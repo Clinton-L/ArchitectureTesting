@@ -10,6 +10,6 @@ namespace PatternPlay.Mediator
 
         public override void Notify(string message) => Console.WriteLine("Moisture Sensor notified: " + message);
 
-        public override void Send() => Mediator.Send("Moi", this);
+        public override void Send() => Mediator.Send(this);
     }
 }

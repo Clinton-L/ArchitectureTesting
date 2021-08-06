@@ -13,4 +13,15 @@ BUILDER PATTERN
 * Add Multiple houses being built (with dependancy)
 */
 
-ABSTRACT FACTORY --NEXT
+ABSTRACT FACTORY
+/*
+* Once we implemented the abstarct factories and abstract products, it did not seem likely we would extand our learning with further extensions.
+* Could just be because its a creational pattern
+* Would be better making another.
+* Perhaps have Abstarct Products interact with other Factories to create Super Products?
+*/
+
+NEXT - Facade Fallback: Observer
+
+IDEA:
+- Have an idea for chained patterns, connecting behavioural and creational
