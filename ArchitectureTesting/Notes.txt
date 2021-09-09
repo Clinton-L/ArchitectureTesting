@@ -21,7 +21,17 @@ ABSTRACT FACTORY
 * Perhaps have Abstarct Products interact with other Factories to create Super Products?
 */
 
-NEXT - Facade Fallback: Observer
+FACADE:
+/*
+* Simple use, Interface covering multiple subsystems
+*/
+
+OBSERVER:
+/*
+* PubSub and message queues, C# Notify() in set method
+*/
+
+NEXT: Linq and Yield, Equals override and reference compare/IEquality Comparer
 
 IDEA:
 - Have an idea for chained patterns, connecting behavioural and creational

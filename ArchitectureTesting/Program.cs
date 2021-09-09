@@ -18,8 +18,8 @@ namespace ArchitectureTesting
 
         static void Main(string[] args)
         {
-            AbstractFactory();
-
+            
+            //AbstractFactory();
             //BuilderPattern();
             //MediatorPattern();
         }
