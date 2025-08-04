@@ -3,14 +3,8 @@ using System.Linq;
 
 namespace ArchitectureTesting.Patterns.Builder
 {
-    public class HouseBuilder : Builder
+    public class HouseBuilder(House House) : Builder
     {
-        private House House { get; set; }
-
-        public HouseBuilder(House house)
-        {
-            House = house;
-        }
         public override Builder BuildFence()
         {
             House.Parts.Add("Fence");

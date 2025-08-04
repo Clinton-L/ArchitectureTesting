@@ -8,10 +8,6 @@ namespace ArchitectureTesting.Patterns.Builder
 {
     public abstract class Builder
     {
-        /*
-         * Notes: 
-         * potentially update to return the builder
-         */
         public abstract Builder BuildWalls(int[] dimensions);
         public abstract Builder BuildRoof();
         public abstract Builder BuildGarage();
