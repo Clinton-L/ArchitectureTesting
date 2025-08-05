@@ -1,11 +1,13 @@
 ﻿using ArchitectureTesting.Patterns.Abstract_Factory.Concrete;
 using ArchitectureTesting.Patterns.Builder;
 using ArchitectureTesting.Patterns.Mediator;
+using ArchitectureTesting.Patterns.Singleton;
 using ArchitectureTesting.Patterns.Stratergy;
 using PatternPlay.Mediator;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 
 namespace ArchitectureTesting
 {
@@ -24,6 +26,7 @@ namespace ArchitectureTesting
             //BuilderPattern();
             //MediatorPattern();
             //StratergyPattern();
+            //SingletonPattern();
         }
 
         private static void BuilderPattern()
@@ -65,6 +68,31 @@ namespace ArchitectureTesting
         private static void StratergyPattern()
         {
             new CementOrderCostingService().CalculateInvoices();
+        }
+
+        private static void SingletonPattern()
+        {
+            Thread thread1 = new Thread(() => 
+            {
+                CheckSingleton(10);
+            });
+
+            Thread thread2 = new Thread(() => 
+            {
+                CheckSingleton(20);
+            });
+
+            thread1.Start();
+            thread2.Start();
+
+            thread1.Join();
+            thread2.Join();
+
+            void CheckSingleton(int multiplier)
+            {
+                var s = Singleton.GetSingleton(multiplier);
+                Console.WriteLine(s.Multiplier * s.Multiplier);
+            }
         }
     }
 }
