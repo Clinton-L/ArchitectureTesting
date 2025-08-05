@@ -1,5 +1,6 @@
 ﻿using ArchitectureTesting.Patterns.Abstract_Factory.Concrete;
 using ArchitectureTesting.Patterns.Builder;
+using ArchitectureTesting.Patterns.Decorator;
 using ArchitectureTesting.Patterns.Mediator;
 using ArchitectureTesting.Patterns.Singleton;
 using ArchitectureTesting.Patterns.Stratergy;
@@ -93,6 +94,17 @@ namespace ArchitectureTesting
                 var s = Singleton.GetSingleton(multiplier);
                 Console.WriteLine(s.Multiplier * s.Multiplier);
             }
+        }
+
+        private void DecoratorPattern()
+        {
+            var filePath = "D:/Temp/DecoratorOutput.txt";
+            var name = "Clinton";
+            Console.WriteLine($"Writing to {filePath} unencrypted, value is {name}");
+            new FileWriter().Write(filePath, name);
+
+            Console.WriteLine($"Writing to {filePath} encrypted, value is {name}");
+            new FileWriterWithEncryption(filePath, name).Write();
         }
     }
 }
