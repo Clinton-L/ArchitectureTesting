@@ -1,31 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ArchitectureTesting.Patterns.Abstract_Factory.Abstract;
+using System;
 
 namespace ArchitectureTesting.Patterns.Abstract_Factory.Concrete
 {
     public class ShoeShop
     {
-        public (Abstract.AbstractShoe, Abstract.AbstractLaces) CreateShoe(Abstract.AbstractShoeFactory shoeFactory)
+        public (Abstract.AbstractShoe, Abstract.AbstractLaces) CreateShoe(Abstract.AbstractShoeFactory shoeFactory, (LaceTypes laceType, string description) prefferedLaces)
         {
             var shoe = shoeFactory.CreateShoe(9);
-            var laces = shoeFactory.CreateLaces();
+            var laces = shoeFactory.CreateLaces(prefferedLaces.laceType, prefferedLaces.description);
 
             laces.AttachTo(shoe);
-            laces.Tie();
 
             return (shoe, laces);
         }
 
-        public void SellShoes(Abstract.AbstractShoeFactory factory, int customerSize)
+        public void SellShoes(AbstractShoeFactory factory, int customerSize)
         {
-            var(shoe, laces) = CreateShoe(factory);
+            var(shoe, laces) = CreateShoe(factory, (LaceTypes.Velcro, "Blakc strap with brand logo on end"));
 
             if(shoe.TryOn(customerSize))
             {
-                Console.WriteLine($"{shoe.Description} of size {customerSize} fits, lace style {laces.GetType().Name}");
+                Console.WriteLine($"{shoe.Description} of size {customerSize} fits, lace style {laces.GetType().Name} {laces.Description}");
             }
             else
             {

@@ -1,18 +1,14 @@
 ﻿using ArchitectureTesting.Patterns.Abstract_Factory.Abstract;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ArchitectureTesting.Patterns.Abstract_Factory.Concrete
 {
     public class ConverseFactory : AbstractShoeFactory
     {
-        public override AbstractLaces CreateLaces()
+        public override AbstractLaces CreateLaces(LaceTypes laceType, string description) => laceType switch
         {
-            return new VelcroLaceProduct();
-        }
+            LaceTypes.Velcro => new VelcroLaceProduct(description),
+            _ => new LaceProduct(description),
+        };
 
         public override AbstractShoe CreateShoe(int size)
         {
