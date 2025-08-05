@@ -1,6 +1,7 @@
 ﻿using ArchitectureTesting.Patterns.Abstract_Factory.Concrete;
 using ArchitectureTesting.Patterns.Builder;
 using ArchitectureTesting.Patterns.Mediator;
+using ArchitectureTesting.Patterns.Stratergy;
 using PatternPlay.Mediator;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,11 @@ namespace ArchitectureTesting
 
         static void Main(string[] args)
         {
-            
+
             //AbstractFactory();
             //BuilderPattern();
             //MediatorPattern();
+            //StratergyPattern();
         }
 
         private static void BuilderPattern()
@@ -58,6 +60,11 @@ namespace ArchitectureTesting
         {
             new ShoeShop().SellShoes(new ConverseFactory(), 9);
             new ShoeShop().SellShoes(new NikeFactory(), 10);
+        }
+
+        private static void StratergyPattern()
+        {
+            new CementOrderCostingService().CalculateInvoices();
         }
     }
 }

@@ -7,14 +7,13 @@ using System.Threading.Tasks;
 
 namespace ArchitectureTesting.Patterns.Abstract_Factory.Concrete
 {
-    public class CasualShoeProduct : AbstractShoe
+    public class CasualShoeProduct(int size) : AbstractShoe
     {
-        public CasualShoeProduct(int size)
-        {
-            Size = size;
-        }
+        public override int Size { get; set; } = size;
 
-        public override int Size { get; }
+        public override AbstractLaces Laces => new LaceProduct("standard lace");
+
+        public override LaceTypes RequiredLaces => LaceTypes.Standard;
 
         public override bool TryOn(int size)
         {
