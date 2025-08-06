@@ -1,5 +1,6 @@
 ﻿using ArchitectureTesting.Patterns.Abstract_Factory.Concrete;
 using ArchitectureTesting.Patterns.Adapter;
+using ArchitectureTesting.Patterns.Bridge;
 using ArchitectureTesting.Patterns.Builder;
 using ArchitectureTesting.Patterns.Decorator;
 using ArchitectureTesting.Patterns.Mediator;
@@ -29,7 +30,8 @@ namespace ArchitectureTesting
             //MediatorPattern();
             //StratergyPattern();
             //SingletonPattern();
-            AdaptorPattern();
+            //AdaptorPattern();
+            BridgePattern();
         }
 
         private static void BuilderPattern()
@@ -122,6 +124,25 @@ namespace ArchitectureTesting
             var player = new DvdPlayer(standardDisc);
 
             Console.WriteLine(player.Playing());
+        }
+
+        private static void BridgePattern()
+        {
+            var fighter = new Fighter();
+            var wizard = new Wizard();
+            
+
+            Console.WriteLine("Does the fighter survive Beginner Levels? ...");
+            Console.WriteLine(new BeginnerLevels(fighter).Combat() ? "They live!!" : "They died!!");
+
+            Console.WriteLine("Does the wizard survive Beginner Levels? ...");
+            Console.WriteLine(new BeginnerLevels(wizard).Combat() ? "They live!!" : "They died!!");
+
+            Console.WriteLine("Does the fighter survive Advanced Levels? ...");
+            Console.WriteLine(new AdvancedLevels(fighter).SkillCheck(20) ? "They live!!" : "They died!!");
+
+            Console.WriteLine("Does the wizard survive Advanced Levels? ...");
+            Console.WriteLine(new AdvancedLevels(wizard).SkillCheck(20) ? "They live!!" : "They died!!");
         }
     }
 }
