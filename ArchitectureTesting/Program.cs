@@ -1,4 +1,5 @@
 ﻿using ArchitectureTesting.Patterns.Abstract_Factory.Concrete;
+using ArchitectureTesting.Patterns.Adapter;
 using ArchitectureTesting.Patterns.Builder;
 using ArchitectureTesting.Patterns.Decorator;
 using ArchitectureTesting.Patterns.Mediator;
@@ -28,6 +29,7 @@ namespace ArchitectureTesting
             //MediatorPattern();
             //StratergyPattern();
             //SingletonPattern();
+            AdaptorPattern();
         }
 
         private static void BuilderPattern()
@@ -105,6 +107,21 @@ namespace ArchitectureTesting
 
             Console.WriteLine($"Writing to {filePath} encrypted, value is {name}");
             new FileWriterWithEncryption(filePath, name).Write();
+        }
+
+        private static void AdaptorPattern()
+        {
+            var bluDisc = new Bluray();
+            var standardDisc = new StandardDvd();
+
+            /* **
+             * with this approach DvdPlayer can only accept discs it can handle
+             * if we were to create a BluRay player then we can approach that differently as they a backwards compatible, 
+             * moving the disc interface to discs and creating a player interface we can make this example much nicer
+             * **/
+            var player = new DvdPlayer(standardDisc);
+
+            Console.WriteLine(player.Playing());
         }
     }
 }
